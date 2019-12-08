@@ -1,0 +1,141 @@
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "BB3-AE-7lX"; */
+"BB3-AE-7lX.normalTitle" = "Войти";
+
+/* Class = "UILabel"; text = "Message:"; ObjectID = "EcR-tw-GnE"; */
+"EcR-tw-GnE.text" = "Сообщение:";
+
+/* Class = "UITextField"; placeholder = "PASSWORD"; ObjectID = "Gyy-dd-PKT"; */
+"Gyy-dd-PKT.placeholder" = "ПАРОЛЬ";
+
+/* Class = "UITextField"; placeholder = "example@email.ua"; ObjectID = "PVf-Mg-B5p"; */
+"PVf-Mg-B5p.placeholder" = "пример@email.ua";
+
+/* Class = "UITextView"; text = "I have a trouble..."; ObjectID = "SQZ-dN-4bM"; */
+"SQZ-dN-4bM.text" = "Возникла проблема...";
+
+/* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "VJl-Jx-jif"; */
+"VJl-Jx-jif.normalTitle" = "ОТПРАВИТЬ";
+
+/* Class = "UILabel"; text = "Forgot password?"; ObjectID = "kWZ-a9-4Jr"; */
+"kWZ-a9-4Jr.text" = "Забыли пароль?";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "l3n-cW-gXT"; */
+"l3n-cW-gXT.placeholder" = "ФИО";
+
+/* Class = "UIButton"; normalTitle = "Contact admins"; ObjectID = "lbB-mf-YUF"; */
+"lbB-mf-YUF.normalTitle" = "Написать админам";
+
+/* Class = "UILabel"; text = "E-Mail:"; ObjectID = "nvI-rK-5JW"; */
+"nvI-rK-5JW.text" = "Электронная почта:";
+
+/* Class = "UITextField"; placeholder = "USERNAME"; ObjectID = "src-tP-8sW"; */
+"src-tP-8sW.placeholder" = "ЛОГИН";
+
+/* Class = "UILabel"; text = "Full Name:"; ObjectID = "zyb-wl-cqN"; */
+"zyb-wl-cqN.text" = "ФИО:";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "1fm-93-0QA"; */
+"1fm-93-0QA.text" = "Адрес";
+
+/* Class = "UITextField"; placeholder = "Home Address"; ObjectID = "2M7-uf-yed"; */
+"2M7-uf-yed.placeholder" = "Домашний Адрес";
+
+/* Class = "UINavigationItem"; title = "Student"; ObjectID = "Bd0-XH-pWw"; */
+"Bd0-XH-pWw.title" = "Студент";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "Cio-hI-P5k"; */
+"Cio-hI-P5k.placeholder" = "Адрес";
+
+/* Class = "UITextField"; placeholder = "Mother/Trustee Phone Number"; ObjectID = "EVU-NW-wsb"; */
+"EVU-NW-wsb.placeholder" = "Телефон Мамы/Опекуна";
+
+/* Class = "UITabBarItem"; title = "Group"; ObjectID = "Exw-CG-Qvy"; */
+"Exw-CG-Qvy.title" = "Группа";
+
+/* Class = "UITextField"; placeholder = "Father/Trustee Phone Number"; ObjectID = "Fap-Gz-Kq6"; */
+"Fap-Gz-Kq6.placeholder" = "Телефон Отца/Опекуна";
+
+/* Class = "UILabel"; text = "FATHER/TRUSTEE:"; ObjectID = "Fcm-9n-aif"; */
+"Fcm-9n-aif.text" = "ОТЕЦ/ОПЕКУН:";
+
+/* Class = "UITabBarItem"; title = "Events"; ObjectID = "MSe-Vc-45b"; */
+"MSe-Vc-45b.title" = "Мероприятия";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "MbL-Ib-1VZ"; */
+"MbL-Ib-1VZ.text" = "Адрес";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "N3M-Za-3UA"; */
+"N3M-Za-3UA.placeholder" = "ФИО";
+
+/* Class = "UILabel"; text = "NUMBER:"; ObjectID = "OmM-Yn-XQy"; */
+"OmM-Yn-XQy.text" = "НОМЕР:";
+
+/* Class = "UITextField"; placeholder = "Mother/Trustee Full Name"; ObjectID = "Oxy-T2-j8G"; */
+"Oxy-T2-j8G.placeholder" = "ФИО Мамы/Опекуна";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "Pgu-aD-4ET"; */
+"Pgu-aD-4ET.placeholder" = "Номер Телефона";
+
+/* Class = "UITextField"; placeholder = "Mother/Trustee Phone Number"; ObjectID = "QbG-fD-yfv"; */
+"QbG-fD-yfv.placeholder" = "Телефон Мамы/Опекуна";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "ZBG-e4-GHF"; */
+"ZBG-e4-GHF.placeholder" = "ФИО";
+
+/* Class = "UINavigationItem"; title = "Edit Info"; ObjectID = "bon-xe-NhG"; */
+"bon-xe-NhG.title" = "Редактировать";
+
+/* Class = "UINavigationItem"; title = "New Student"; ObjectID = "euY-Cx-d4V"; */
+"euY-Cx-d4V.title" = "Новый Студент";
+
+/* Class = "UITextField"; placeholder = "Father/Trustee Full Name"; ObjectID = "f4V-8f-mYL"; */
+"f4V-8f-mYL.placeholder" = "ФИО Отца/Опекуна";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "f5a-wg-iq7"; */
+"f5a-wg-iq7.placeholder" = "Номер Телефона";
+
+/* Class = "UITextField"; placeholder = "Father/Trustee Full Name"; ObjectID = "iKU-DL-04B"; */
+"iKU-DL-04B.placeholder" = "ФИО Отца/Опекуна";
+
+/* Class = "UILabel"; text = "MOTHER/TRUSTEE:"; ObjectID = "idF-C1-YNH"; */
+"idF-C1-YNH.text" = "МАМА/ОПЕКУН:";
+
+/* Class = "UINavigationItem"; title = "Group"; ObjectID = "kEw-83-yN5"; */
+"kEw-83-yN5.title" = "Группа";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "nnz-2i-8JW"; */
+"nnz-2i-8JW.placeholder" = "Адрес";
+
+/* Class = "UILabel"; text = "NUMBER:"; ObjectID = "qo5-he-MM1"; */
+"qo5-he-MM1.text" = "НОМЕР:";
+
+/* Class = "UITextField"; placeholder = "Home Address"; ObjectID = "rhc-ul-noZ"; */
+"rhc-ul-noZ.placeholder" = "Домашний Адрес";
+
+/* Class = "UITextField"; placeholder = "Father/Trustee Phone Number"; ObjectID = "xrf-nT-Yb1"; */
+"xrf-nT-Yb1.placeholder" = "Телефон Отца/Опекуна";
+
+/* Class = "UITextField"; placeholder = "Mother/Trustee Full Name"; ObjectID = "zbT-3m-nSF"; */
+"zbT-3m-nSF.placeholder" = "ФИО Мамы/Опекуна";
+
+/* Class = "UILabel"; text = "Full Name:"; ObjectID = "zyb-wl-cqN"; */
+"zyb-wl-cqN.text" = "ФИО:";
+
+/* Class = "UINavigationItem"; title = "New Event"; ObjectID = "7p4-WE-6TE"; */
+"7p4-WE-6TE.title" = "Новое Мероприятие";
+
+/* Class = "UITextField"; placeholder = "Date (example: 2019-01-01 10:10) "; ObjectID = "A5t-9J-bGv"; */
+"A5t-9J-bGv.placeholder" = "Дата (пример: 2019-01-01 10:10) ";
+
+/* Class = "UITabBarItem"; title = "Events"; ObjectID = "MSe-Vc-45b"; */
+"MSe-Vc-45b.title" = "Мероприятия";
+
+/* Class = "UILabel"; text = "Notify Me?"; ObjectID = "nqv-Fq-fkx"; */
+"nqv-Fq-fkx.text" = "Сообщить Мне?";
+
+/* Class = "UINavigationItem"; title = "Events"; ObjectID = "uVA-5g-KZc"; */
+"uVA-5g-KZc.title" = "Мероприятия";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "VKH-ts-dYS"; */
+"VKH-ts-dYS.placeholder" = "Название";

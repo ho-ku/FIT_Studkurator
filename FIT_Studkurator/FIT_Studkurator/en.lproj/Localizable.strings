@@ -1,0 +1,29 @@
+/* 
+  Localized.strings
+  FIT_Studkurator
+
+  Created by Денис Андриевский on 11/30/19.
+  Copyright © 2019 Денис Андриевский. All rights reserved.
+*/
+"Username is empty" = "Username is empty";
+"Password is empty" = "Password is empty";
+"Something went wrong. Please check all fields" = "Something went wrong. Please check all fields";
+"Name field is empty" = "Name field is empty";
+"Email field is empty" = "Email field is empty";
+"Invalid email" = "Invalid email";
+"Are you sure?" = "Are you sure?";
+"You should write complex explanation of your problem, but your message is too short. Are you sure that you want to continue?" = "You should write complex explanation of your problem, but your message is too short. Are you sure that you want to continue?";
+"Yes" = "Yes";
+"Alright" = "Alright";
+"Thanks for your letter. It will be considered as soon as possible." = "Thanks for your letter. It will be considered as soon as possible.";
+"No" = "No";
+"Oops.." = "Oops..";
+"I have a trouble..." = "I have a trouble...";
+"Search..." = "Search...";
+"This number is already taken" = "This number is already taken";
+"Some of the fields are blank" = "Some of the fields are blank";
+"Invalid phone number" = "Invalid phone number";
+"Choose your photo source" = "Choose your photo source";
+"Camera" = "Camera";
+"Photo library" = "Photo library";
+"Invalid date format. Please, follow the example" = "Invalid date format. Please, follow the example";

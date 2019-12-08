@@ -1,0 +1,29 @@
+/* 
+  Localized.strings
+  FIT_Studkurator
+
+  Created by Денис Андриевский on 11/30/19.
+  Copyright © 2019 Денис Андриевский. All rights reserved.
+*/
+"Username is empty" = "Логін не заповнений";
+"Password is empty" = "Пароль не заповнений";
+"Something went wrong. Please check all fields" = "Щось пішло не так. Перевірте всі поля, будь ласка";
+"Name field is empty" = "Ім'я не заповнено";
+"Email field is empty" = "Email не заповнений";
+"Invalid email" = "Невірний email";
+"Are you sure?" = "Ви впевнені?";
+"You should write complex explanation of your problem, but your message is too short. Are you sure that you want to continue?" = "Ви маєте розписати свою проблему, але Ваше повідомлення надто коротке. Ви впевнені, що бажаєте продовжити?";
+"Yes" = "Так";
+"Alright" = "Успіх";
+"Thanks for your letter. It will be considered as soon as possible." = "Дякуємо за Ваше повідомлення. Воно буде розглянуто якомога швидше.";
+"No" = "Ні";
+"Oops.." = "Упс..";
+"I have a trouble..." = "У мене проблема...";
+"Search..." = "Шукати...";
+"This number is already taken" = "Номер вже зайнятий";
+"Some of the fields are blank" = "Деякi поля пустi";
+"Invalid phone number" = "Невiрно введений номер телефону";
+"Choose your photo source" = "Оберіть джерело фотографії";
+"Camera" = "Камера";
+"Photo library" = "Галерея медіа";
+"Invalid date format. Please, follow the example" = "Невірний формат дати. Спробуйте ще раз по прикладу";
