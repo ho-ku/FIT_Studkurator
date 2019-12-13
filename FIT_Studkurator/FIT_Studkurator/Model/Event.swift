@@ -14,6 +14,7 @@ struct Event {
     var date: Date?
     var isDone: Bool
     var notify: Bool
-    var image: Data
+    var image: String
+    var number: Int
     
 }

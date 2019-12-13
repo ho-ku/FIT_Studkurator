@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class NewStudentTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
    
-    var dataBase = [Student]()
+    var dataBase: [Student]!
     private var textFieldArray = [UITextField]()
     private var lineArray = [UIView]()
     private var pickerArray = 1...50
+    private var parser = Parser()
+    private var id: String {
+        return UserDefaults.standard.value(forKey: "id") as! String
+    }
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var text1: UITextField! {
@@ -70,7 +76,7 @@ class NewStudentTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataBase = UserDefaults.standard.value(forKey: "dataBase") as! [Student]
+        dataBase = parser.parse(dict: (UserDefaults.standard.value(forKey: "dataBase") as? [String: [String: String]])!)
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -125,27 +131,27 @@ class NewStudentTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDel
         if check() {
             let newStudent = Student(fullName: text1.text!, number: pickerView.selectedRow(inComponent: 0)+1, address: text3.text!, mother: Parent(type: .mother, fullName: text5.text!, phoneNumber: text6.text!), father: Parent(type: .father, fullName: text7.text!, phoneNumber: text8.text!), homeAddress: text4.text!, phoneNumber: text2.text!)
             
-            var save = true
-            
+            var saveEnabled = true
             fetchDataBase { (result) in
                 self.dataBase.forEach { student in
-                    if student.number == Int16(self.pickerView.selectedRow(inComponent: 0)+1) {
+                    if student.number == Int(self.pickerView.selectedRow(inComponent: 0)+1) {
                         
                         let alertController = UIAlertController(title: "Oops..".localized, message: "This number is already taken".localized, preferredStyle: .alert)
                         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                         
-                        save = false
+                        saveEnabled = false
                     }
                 }
                 
-                if save {
+                if saveEnabled {
+                    self.save(student: newStudent) { (_) in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "GroupVC")
+                        self.present(controller, animated: true, completion: nil)
+                    }
                     
-                   
                     
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "GroupVC")
-                    self.present(controller, animated: true, completion: nil)
                 }
             }
             
@@ -153,6 +159,16 @@ class NewStudentTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDel
             
         } 
     }
+    
+    func save(student: Student, completionHandler: @escaping (Result<Any, Error>) -> ()) {
+        let ref = Database.database().reference()
+        dataBase.append(student)
+        UserDefaults.standard.set(self.parser.unparse(data: self.dataBase), forKey: "dataBase")
+        ref.child("\(id)/groupDataBase").setValue(self.parser.unparse(data: dataBase))
+        completionHandler(.success(dataBase!))
+    }
+    
+    
     
     func fetchDataBase(completionHandler: @escaping (Result<[Student], Error>) -> ()) {
         

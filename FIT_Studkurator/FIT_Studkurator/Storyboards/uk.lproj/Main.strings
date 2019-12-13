@@ -139,3 +139,21 @@
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "VKH-ts-dYS"; */
 "VKH-ts-dYS.placeholder" = "Назва";
+
+/* Class = "UILabel"; text = "Event Title"; ObjectID = "8bI-uw-iUL"; */
+"8bI-uw-iUL.text" = "Назва Заходу";
+
+/* Class = "UIButton"; normalTitle = "Mark as done"; ObjectID = "E7B-Mf-hFh"; */
+"E7B-Mf-hFh.normalTitle" = "Закінчено";
+
+/* Class = "UILabel"; text = "date"; ObjectID = "jVK-PE-Q6q"; */
+"jVK-PE-Q6q.text" = "дата";
+
+/* Class = "UILabel"; text = "Event Title"; ObjectID = "siv-bD-7Yt"; */
+"siv-bD-7Yt.text" = "Назва Заходу";
+
+/* Class = "UINavigationItem"; title = "Events"; ObjectID = "uVA-5g-KZc"; */
+"uVA-5g-KZc.title" = "Заходи";
+
+/* Class = "UINavigationItem"; title = "Event"; ObjectID = "wdv-jP-rQ0"; */
+"wdv-jP-rQ0.title" = "Зазід";

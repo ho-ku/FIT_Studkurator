@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,12 +38,17 @@
 		376FBB56239180D800DAFE81 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376FBB4C239180D800DAFE81 /* Rubik-Regular.ttf */; };
 		376FBB57239180D800DAFE81 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376FBB4D239180D800DAFE81 /* Rubik-Black.ttf */; };
 		376FBB58239180D800DAFE81 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 376FBB4E239180D800DAFE81 /* Rubik-Italic.ttf */; };
+		3784AA78239D5A1C00E1EBD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3784AA77239D5A1C00E1EBD8 /* GoogleService-Info.plist */; };
 		37BCD2BD2391843200B10B00 /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BCD2BC2391843200B10B00 /* RoundedCornerTextField.swift */; };
 		37BCD2BF2391910300B10B00 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BCD2BE2391910300B10B00 /* UINavigationController+Ext.swift */; };
 		37BCD2C12391A9F200B10B00 /* ContactTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BCD2C02391A9F200B10B00 /* ContactTVC.swift */; };
 		37C142062392866B00DAE981 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37C142082392866B00DAE981 /* Localizable.strings */; };
 		37C3A88E239BDAF200D7C1B2 /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3A88D239BDAF200D7C1B2 /* RoundedCornerButton.swift */; };
 		37C3A890239BDCDB00D7C1B2 /* NewEventTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3A88F239BDCDB00D7C1B2 /* NewEventTVC.swift */; };
+		37DCD40E239E588000FF2901 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCD40D239E588000FF2901 /* Parser.swift */; };
+		37DCD410239EA93B00FF2901 /* EventParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCD40F239EA93B00FF2901 /* EventParser.swift */; };
+		37E40988239D6AB0000168F5 /* RoundedCornerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E40987239D6AB0000168F5 /* RoundedCornerLabel.swift */; };
+		FC4B674CD78960FD29B2C0FC /* Pods_FIT_Studkurator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1BB083D16C8EB2C2301191 /* Pods_FIT_Studkurator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,7 @@
 		376FBB4C239180D800DAFE81 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		376FBB4D239180D800DAFE81 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		376FBB4E239180D800DAFE81 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		3784AA77239D5A1C00E1EBD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37BCD2BC2391843200B10B00 /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		37BCD2BE2391910300B10B00 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		37BCD2C02391A9F200B10B00 /* ContactTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTVC.swift; sourceTree = "<group>"; };
@@ -92,6 +98,12 @@
 		37C1420E2392867A00DAE981 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37C3A88D239BDAF200D7C1B2 /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		37C3A88F239BDCDB00D7C1B2 /* NewEventTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventTVC.swift; sourceTree = "<group>"; };
+		37DCD40D239E588000FF2901 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		37DCD40F239EA93B00FF2901 /* EventParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParser.swift; sourceTree = "<group>"; };
+		37E40987239D6AB0000168F5 /* RoundedCornerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerLabel.swift; sourceTree = "<group>"; };
+		7D39D2BBF1866719726F7EB5 /* Pods-FIT_Studkurator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT_Studkurator.debug.xcconfig"; path = "Target Support Files/Pods-FIT_Studkurator/Pods-FIT_Studkurator.debug.xcconfig"; sourceTree = "<group>"; };
+		EC1BB083D16C8EB2C2301191 /* Pods_FIT_Studkurator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIT_Studkurator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC15A600BA25A14B9C388FF /* Pods-FIT_Studkurator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT_Studkurator.release.xcconfig"; path = "Target Support Files/Pods-FIT_Studkurator/Pods-FIT_Studkurator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4B674CD78960FD29B2C0FC /* Pods_FIT_Studkurator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +124,7 @@
 				376FBB1D2391783000DAFE81 /* FIT_Studkurator */,
 				376FBB1C2391783000DAFE81 /* Products */,
 				DCF69C61B514DEE11DC4B6A0 /* Pods */,
+				AA69B19BFE1F2EC0E19A147A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +148,7 @@
 				376FBB36239178B100DAFE81 /* Storyboards */,
 				376FBB352391789000DAFE81 /* Resources */,
 				376FBB2F2391783200DAFE81 /* Info.plist */,
+				3784AA77239D5A1C00E1EBD8 /* GoogleService-Info.plist */,
 				37C142082392866B00DAE981 /* Localizable.strings */,
 			);
 			path = FIT_Studkurator;
@@ -180,6 +195,7 @@
 				374A5ECB239533D1008075B6 /* RoundedView.swift */,
 				3706CDD6239ACF5A0092A0E7 /* EventCell.swift */,
 				37C3A88D239BDAF200D7C1B2 /* RoundedCornerButton.swift */,
+				37E40987239D6AB0000168F5 /* RoundedCornerLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +206,8 @@
 				376FBB3C239179B100DAFE81 /* Student.swift */,
 				376FBB3E23917A2C00DAFE81 /* Parent.swift */,
 				376FBB4023917AEA00DAFE81 /* Event.swift */,
+				37DCD40D239E588000FF2901 /* Parser.swift */,
+				37DCD40F239EA93B00FF2901 /* EventParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,9 +249,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		AA69B19BFE1F2EC0E19A147A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1BB083D16C8EB2C2301191 /* Pods_FIT_Studkurator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCF69C61B514DEE11DC4B6A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				7D39D2BBF1866719726F7EB5 /* Pods-FIT_Studkurator.debug.xcconfig */,
+				FDC15A600BA25A14B9C388FF /* Pods-FIT_Studkurator.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -245,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 376FBB322391783200DAFE81 /* Build configuration list for PBXNativeTarget "FIT_Studkurator" */;
 			buildPhases = (
+				5AB9F6816675B61E9551DE0D /* [CP] Check Pods Manifest.lock */,
 				376FBB172391783000DAFE81 /* Sources */,
 				376FBB182391783000DAFE81 /* Frameworks */,
 				376FBB192391783000DAFE81 /* Resources */,
+				EB25968D538CCB14BAC20FAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +330,7 @@
 			files = (
 				376FBB2E2391783200DAFE81 /* LaunchScreen.storyboard in Resources */,
 				376FBB51239180D800DAFE81 /* Rubik-Light.ttf in Resources */,
+				3784AA78239D5A1C00E1EBD8 /* GoogleService-Info.plist in Resources */,
 				376FBB4F239180D800DAFE81 /* Rubik-LightItalic.ttf in Resources */,
 				376FBB53239180D800DAFE81 /* Rubik-MediumItalic.ttf in Resources */,
 				37C142062392866B00DAE981 /* Localizable.strings in Resources */,
@@ -316,6 +347,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AB9F6816675B61E9551DE0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FIT_Studkurator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB25968D538CCB14BAC20FAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT_Studkurator/Pods-FIT_Studkurator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT_Studkurator/Pods-FIT_Studkurator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FIT_Studkurator/Pods-FIT_Studkurator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		376FBB172391783000DAFE81 /* Sources */ = {
@@ -335,9 +408,12 @@
 				373D6329239568FD00BEAF9F /* NewStudentTVC.swift in Sources */,
 				37BCD2BD2391843200B10B00 /* RoundedCornerTextField.swift in Sources */,
 				374A5EC0239512A2008075B6 /* GroupVC.swift in Sources */,
+				37E40988239D6AB0000168F5 /* RoundedCornerLabel.swift in Sources */,
 				37BCD2BF2391910300B10B00 /* UINavigationController+Ext.swift in Sources */,
 				376FBB4123917AEA00DAFE81 /* Event.swift in Sources */,
 				376FBB4323917BDB00DAFE81 /* String+Ext.swift in Sources */,
+				37DCD410239EA93B00FF2901 /* EventParser.swift in Sources */,
+				37DCD40E239E588000FF2901 /* Parser.swift in Sources */,
 				376FBB3F23917A2C00DAFE81 /* Parent.swift in Sources */,
 				375000B4239D41830075EC39 /* DetailEventTVC.swift in Sources */,
 				373D632B239573B000BEAF9F /* EditTVC.swift in Sources */,
@@ -502,6 +578,7 @@
 		};
 		376FBB332391783200DAFE81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D39D2BBF1866719726F7EB5 /* Pods-FIT_Studkurator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,7 +589,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FIT-Studkurator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.den444ick.FIT-Studkurator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,6 +598,7 @@
 		};
 		376FBB342391783200DAFE81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC15A600BA25A14B9C388FF /* Pods-FIT_Studkurator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,7 +609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.FIT-Studkurator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.den444ick.FIT-Studkurator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

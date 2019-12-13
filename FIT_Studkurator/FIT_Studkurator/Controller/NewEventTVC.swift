@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 
 class NewEventTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    private var dataBase = [Event]()
     @IBOutlet weak var chosenImageView: UIImageView!
     @IBOutlet weak var nameField: UITextField! {
         didSet {
@@ -30,10 +32,19 @@ class NewEventTVC: UITableViewController, UIImagePickerControllerDelegate, UINav
     
     private var textFieldArray = [UITextField]()
     private var lineArray = [UIView]()
+    private var id: String {
+        return UserDefaults.standard.value(forKey: "id") as! String
+    }
+    private var parser = EventParser()
+    private var imgsArray = [Data]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let value = UserDefaults.standard.value(forKey: "eventDataBase") as? [String: [String: String]] {
+            dataBase = parser.parse(dict: value)
+        }
         
             let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
                tap.cancelsTouchesInView = false
@@ -148,7 +159,7 @@ class NewEventTVC: UITableViewController, UIImagePickerControllerDelegate, UINav
     
     @IBAction func saveBtnPressed(_ sender: Any) {
         
-        var newEvent: Event = Event(name: "", date: nil, isDone: false, notify: false, image: Data())
+        var newEvent: Event = Event(name: "", date: nil, isDone: false, notify: false, image: String(), number: 0)
         
         guard let name = nameField.text, name != "" else {
             line.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3)
@@ -173,18 +184,51 @@ class NewEventTVC: UITableViewController, UIImagePickerControllerDelegate, UINav
             return
         }
         
-        var image = Data()
-        if let img = chosenImageView.image?.pngData() {
-            image = img
+        var maxNumber = 0
+        dataBase.forEach { event in
+            maxNumber = event.number > maxNumber ? event.number : maxNumber
         }
         
-        newEvent = Event(name: name, date: date, isDone: false, notify: notifying, image: image)
         
-       
+        newEvent = Event(name: name, date: date, isDone: false, notify: notifying, image: "event\(maxNumber+1)", number: maxNumber+1)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "GroupVC")
-        self.present(controller, animated: true, completion: nil)
+        save(event: newEvent) { (_) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "GroupVC")
+            self.present(controller, animated: true, completion: nil)
+        }
+        
+        
+        
+        
+    }
+    
+    func save(event: Event, completionHandler: @escaping (Result<Any, Error>) -> ()) {
+        let ref = Database.database().reference()
+        dataBase.append(event)
+        ref.child("\(id)/eventDataBase").setValue(self.parser.unparse(data: dataBase))
+        
+        let group = DispatchGroup()
+        group.enter()
+        
+        let uploadRef = Storage.storage().reference(withPath: "imgs/event\(event.number).jpg")
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        var image = Data()
+        if let img = chosenImageView.image?.jpegData(compressionQuality: 0.75) {
+            image = img
+        }
+        uploadRef.putData(image, metadata: uploadMetadata) { (downloadMetadata, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+            
+            }
+        group.leave()
+        group.notify(queue: DispatchQueue.main) {
+            completionHandler(.success(self.dataBase))
+        }
         
         
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController, UITextFieldDelegate {
 
@@ -44,8 +45,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     passwordField.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3)
                     alert(message: "Password is empty".localized)
                 } else {
-                    // MARK:- Alright
-                    print("Alright")
+                    login(withEmail: username, password: password)
                 }
             } else {
                 alert(message: "Something went wrong. Please check all fields".localized)
@@ -64,10 +64,22 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.removeObject(forKey: "eventDataBase")
+        UserDefaults.standard.removeObject(forKey: "groupDataBase")
+        
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults.standard.value(forKey: "id") != nil {
+            performSegue(withIdentifier: "pass", sender: self)
+        }
     }
     
     
@@ -81,12 +93,28 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 passwordField.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 0.3)
                 alert(message: "Password is empty".localized)
             } else {
-                print("Alright")
+                
+                login(withEmail: username, password: password)
+                
             }
         } else {
             alert(message: "Something went wrong. Please check all fields".localized)
         }
         
+    }
+    
+    func login(withEmail email: String, password: String, _ callback: ((Error?) -> ())? = nil ) {
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if let e = error {
+                callback?(e)
+                print("error")
+                return
+            }
+            callback?(nil)
+            
+            UserDefaults.standard.set(user!.user.uid, forKey: "id")
+            self.performSegue(withIdentifier: "pass", sender: self)
+        }
     }
     
     @IBAction func contactBtnPressed(_ sender: Any) {

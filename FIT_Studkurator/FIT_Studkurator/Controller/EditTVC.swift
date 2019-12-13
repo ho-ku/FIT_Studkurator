@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class EditTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    var dataBase: [Student] {
-        return UserDefaults.standard.value(forKey: "dataBase") as! [Student]
-    }
+    var dataBase: [Student]!
     private var textFieldArray = [UITextField]()
     private var lineArray = [UIView]()
     private var pickerArray = 1...50
+    private var parser = Parser()
+    private var id: String {
+        return UserDefaults.standard.value(forKey: "id") as! String
+    }
     
     
     // MARK:- logic with student
@@ -86,6 +89,8 @@ class EditTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate,
         pickerView.delegate = self
         pickerView.dataSource = self
         
+        dataBase = parser.parse(dict: (UserDefaults.standard.value(forKey: "dataBase") as? [String: [String: String]])!)
+        
         pickerView.selectRow(Int(student.number-1), inComponent: 0, animated: false)
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
@@ -137,34 +142,46 @@ class EditTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate,
         @IBAction func saveBtnPressed(_ sender: Any) {
             if check() {
                 let newStudent = Student(fullName: text1.text!, number: pickerView.selectedRow(inComponent: 0)+1, address: text3.text!, mother: Parent(type: .mother, fullName: text5.text!, phoneNumber: text6.text!), father: Parent(type: .father, fullName: text7.text!, phoneNumber: text8.text!), homeAddress: text4.text!, phoneNumber: text2.text!)
-                var save = true
+                var saveEnabled = true
                         
                 fetchDataBase { (result) in
                     self.dataBase.forEach { student in
-                        if student.number == Int16(self.pickerView.selectedRow(inComponent: 0)+1) && student.number != self.student.number {
-                                    
+                        if student.number == Int(self.pickerView.selectedRow(inComponent: 0)+1) && student.number != self.student.number {
+                            
                             let alertController = UIAlertController(title: "Oops..".localized, message: "This number is already taken".localized, preferredStyle: .alert)
                             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                             self.present(alertController, animated: true, completion: nil)
                                     
-                            save = false
+                            saveEnabled = false
                         }
                     }
                             
-                    if save {
-                                
+                    if saveEnabled {
+                
+                        self.save(student: newStudent) { (_) in
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let controller = storyboard.instantiateViewController(withIdentifier: "GroupVC")
+                            self.present(controller, animated: true, completion: nil)
+                        }
+                                               
+                                               
                         
-                                               
-                                               
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let controller = storyboard.instantiateViewController(withIdentifier: "GroupVC")
-                        self.present(controller, animated: true, completion: nil)
                     }
                 }
                         
                         
                         
             }
+        }
+    
+        func save(student currentStudent: Student, completionHandler: @escaping (Result<Any, Error>) -> ()) {
+            let ref = Database.database().reference()
+            var unparsedDataBase = self.parser.unparse(data: dataBase)
+            unparsedDataBase["\(currentStudent.number-1)k"] = self.parser.unparse(data: [currentStudent])["\(currentStudent.number-1)k"]!
+            UserDefaults.standard.set(unparsedDataBase, forKey: "dataBase")
+            ref.child("\(id)/groupDataBase/\(currentStudent.number-1)k").removeValue()
+            ref.child("\(id)/groupDataBase").setValue(unparsedDataBase)
+            completionHandler(.success(dataBase!))
         }
                 
         func fetchDataBase(completionHandler: @escaping (Result<[Student], Error>) -> ()) {

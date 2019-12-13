@@ -7,20 +7,26 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 
 class GroupVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
     var searchController: UISearchController!
     @IBOutlet weak var tableView: UITableView!
+    private var id: String {
+        return UserDefaults.standard.value(forKey: "id") as! String
+    }
     private var dataBase = [Student]()
     private var filteredResults = [Student]()
     private var studentIndex = Int()
-    
+    private var parser = Parser()
+
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
@@ -29,9 +35,20 @@ class GroupVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         tableView.dataSource = self
         tableView.rowHeight = 60
         
-        filteredResults = dataBase
+        fetch { (result) in
+            switch result {
+            case .success(let res):
+                self.dataBase = res
+                self.filteredResults = self.dataBase
+                self.sort()
+                UserDefaults.standard.set(self.parser.unparse(data: self.dataBase), forKey: "dataBase")
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
         
-        UserDefaults.standard.set(dataBase, forKey: "dataBase")
+        
         
         // MARK:- Search Controller
         searchController = UISearchController(searchResultsController: nil)
@@ -39,8 +56,25 @@ class GroupVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         tableView.tableHeaderView = searchController.searchBar
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search...".localized
+        
+        
     
     }
+    
+    func fetch(completionHandler: @escaping (Result<[Student], Error>) -> ()) {
+ 
+        let ref = Database.database().reference()
+        ref.child("\(id)").observeSingleEvent(of: .value) { (snapshot) in
+    
+            guard let snap = snapshot.value! as? NSDictionary, let val = snap.value(forKeyPath: "groupDataBase") else { return }
+            guard let response = val as AnyObject as? [String: [String: String]] else { return }
+            
+            self.dataBase = self.parser.parse(dict: response)
+            completionHandler(.success(self.dataBase))
+        }
+    }
+    
+    
     
     func updateSearchResults(for searchController: UISearchController) {
         let text = searchController.searchBar.text
@@ -142,9 +176,12 @@ class GroupVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "") { (_, _, completionHandler) in
           
+            
+            let ref = Database.database().reference()
+            ref.child("\(self.id)/groupDataBase/\(self.dataBase[indexPath.row].number-1)k").removeValue()
             self.dataBase.remove(at: indexPath.row)
             self.filteredResults.remove(at: indexPath.row)
-            UserDefaults.standard.set(self.dataBase, forKey: "dataBase")
+            UserDefaults.standard.set(self.parser.unparse(data: self.dataBase), forKey: "dataBase")
             self.tableView.reloadData()
             completionHandler(true)
         }
